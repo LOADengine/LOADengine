@@ -1,0 +1,10 @@
+# Build and intermediary
+/bin/
+/obj/
+/gen/
+# VS stuff
+*vcxproj
+*.sln
+/.vs/
+*.filters
+*.user
