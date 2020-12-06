@@ -4,5 +4,5 @@
 
 void RenderMesh(Mesh *mesh)
 {
-    printf("Rendering the mesh!\n");
+  //printf("Rendering the mesh!\n");
 }
