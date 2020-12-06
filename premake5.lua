@@ -37,7 +37,7 @@ project "LOADengine"
 
     filter "configurations:Debug"
         defines { "DEBUG" }
-        symbols "On"
+        symbols "Full"
 
     filter "configurations:Release"
         defines { "NDEBUG" }
