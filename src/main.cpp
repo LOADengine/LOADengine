@@ -11,6 +11,7 @@
 // Third party
 #include <glm/glm.hpp>
 #include <GLFW/glfw3.h>
+#include <vulkan/vulkan.h>
 
 // Project
 #include "main.h"
@@ -35,6 +36,29 @@ int main(int argc, char const *argv[])
     {
         printf("Failed to create GLFW window!\n");
     }
+
+	
+	VkInstance instance;
+	VkInstanceCreateInfo createInfo{};
+	VkResult result = vkCreateInstance(&createInfo, nullptr, &instance);
+	if(result != VK_SUCCESS)
+	{
+		printf("Failed to create Vulkan instance!"
+			   "Turns out giving an empty create struct doesn't work!"
+			   "Who knew?!\n");
+	}
+	else
+	{
+	   printf("... Okay so giving it an empty create struct doesn't crash..."
+			  "Probably fail elsewhere, but that is sorta making this bit stupider\n");
+	}
+	
+	// Create an 8 byte memory
+	Linear_Memory alloc = linear_memory_create(8);
+	u8* memory = (u8*)push_memory(&alloc, 1);
+	*memory = 'y';
+	print_memory_state(&alloc);
+	
 
     // @Temporary Can we access stuff in other files? :O
     Mesh mesh;

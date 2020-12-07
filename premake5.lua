@@ -16,6 +16,12 @@ function linkGLFW()
 end
 
 
+function linkVulkan()
+    includedirs("$(VULKAN_SDK)/include")
+    
+    links("$(VULKAN_SDK)/lib/vulkan-1.lib")
+end
+
 workspace "LOADengine"
     configurations { "Debug", "Release" }
     platforms {"x86_64"}
@@ -29,11 +35,16 @@ project "LOADengine"
     includedirs "external/glm"
     includeGLFW()
     linkGLFW()
+
+    linkVulkan()
+    
     files { "src/**.h", "src/**.cpp" }
     vpaths {
         ["Headers"] = { "src/**.h", "src/**.hpp" },
         ["Sources"] = { "src/**.c", "src/**.cpp" },
     }
+
+    
 
     filter "configurations:Debug"
         defines { "DEBUG" }
