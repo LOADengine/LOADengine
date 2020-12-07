@@ -2,9 +2,16 @@
 /bin/
 /obj/
 /gen/
+/build.bat
+/run_release.bat
+/run_debug.bat
+    
 # VS stuff
 *vcxproj
 *.sln
 /.vs/
 *.filters
 *.user
+
+# Emacs backup files
+*~
