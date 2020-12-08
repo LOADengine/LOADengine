@@ -5,11 +5,13 @@
 /build.bat
 /run_release.bat
 /run_debug.bat
+*.pdb
     
 # VS stuff
 *vcxproj
 *.sln
 /.vs/
+/.vscode/
 *.filters
 *.user
 
